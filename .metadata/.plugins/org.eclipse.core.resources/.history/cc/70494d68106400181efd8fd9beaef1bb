@@ -1,0 +1,78 @@
+import java.io.File;
+import java.util.Scanner;
+
+public class BTree {
+
+	private int tVal;
+	private final int min; // the minimum degree of the node
+	private final int max; // the maximum degree of the node
+	private BTreeNode root;// the root of the tree
+	LinkedList friendsList;//list of friends
+
+	public BTree(String tVal) {
+		friendsList= new LinkedList();
+		this.tVal=Integer.parseInt(tVal);//BDIKA MORAN
+		min = this.tVal-1;
+		max=this.tVal*2-1;
+		//createFullTree("user.dir"+"/friends.txt");
+		root = new BTreeNode(0, 1,max,min);
+	}
+//	public static void main(String[] args) {
+//		int a=2;
+//		BTree b= new BTree("2");
+//	}
+	public void createFullTree(String string) {
+		System.out.println(string);
+		openFile();
+		//AlphabetOrder();
+	}
+
+	/**this function compare between two strings alphabetically
+	 * @param str1-the first string
+	 * @param str2-the second string
+	 * @return- true if the first string is smaller than the second.
+	 */
+	private boolean AlphabetOrder(String str1,String str2){
+		int sizeStr1=str1.length();
+		int sizeStr2=str2.length();
+
+		if(sizeStr1 <= sizeStr2){//if the size of str1 smaller or equal than str2
+			for(int i=0 ; i < sizeStr1 ; i++){
+				if(str1.charAt(i) < str2.charAt(i))
+					return true;
+			}
+		}//if
+		else{//if the size of str1 bigger than str2
+			for(int i=0 ; i < sizeStr2 ; i++){
+				if(str1.charAt(i) < str2.charAt(i))
+					return true;
+			}
+		}
+		return false;
+	}//close AlphabetOrder
+
+	/**this function is responsible for opening the file.
+	 * @param friendsList-the list of friends.
+	 */
+	private void openFile(){
+		Scanner read = null;
+		try{//try to read from a file
+			read = new Scanner(new File("friends.txt"));
+		}
+		catch(Exception e){//if the file doesn't exist, print an error message.
+			System.out.println("could not find file");
+		}
+		readFile(read);
+	}//close openFile
+
+	/**this function is responsible for inserting the friends in a linked list.   
+	 * @param read- the opened file.
+	 * @param friendsList- the list of friends.
+	 */
+	private void readFile(Scanner read){
+		while(read.hasNext()){//while there is elements in the file.
+			String temp=read.nextLine();
+			friendsList.insert(temp);//insert the pair of friends in to the list.
+		}
+	}//close readFile
+}

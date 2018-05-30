@@ -1,0 +1,15 @@
+package pacman;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MainWindow extends JFrame{
+
+	JButton start, exit;
+	
+	
+	public MainWindow(){
+		setBounds(200, 100, 500, 350);
+		setVisible(true);
+	}
+}

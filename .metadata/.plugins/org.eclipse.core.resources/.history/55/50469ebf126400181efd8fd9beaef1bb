@@ -1,0 +1,24 @@
+package pacman;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MainWindow extends JFrame{
+
+	JButton start, exit;
+	
+	
+	public MainWindow(){
+		setBounds(200, 100, 500, 350);
+		setVisible(true);
+		start= new JButton();
+		exit= new JButton();
+		JLabel label = new JLabel("Pacman");
+		
+		label.setBounds(250, 100, 200, 80);
+		getContentPane().add(label);
+		
+		
+	}
+}

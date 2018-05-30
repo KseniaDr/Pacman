@@ -1,0 +1,30 @@
+package pacman;
+
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MainWindow extends JFrame{
+
+	JButton start, exit;
+	
+	
+	public MainWindow(){
+		setBounds(200, 100, 500, 350);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel label = new JLabel("PACMAN");
+		label.setFont(new Font("Chiller", Font.BOLD ,44));
+		label.setBounds(180, 10, 200, 80);
+		getContentPane().add(label);
+		start= new JButton();
+		start.setBounds(180, 60, 100, 50);
+		getContentPane().add(start);
+		exit= new JButton();
+		
+		
+	}
+}

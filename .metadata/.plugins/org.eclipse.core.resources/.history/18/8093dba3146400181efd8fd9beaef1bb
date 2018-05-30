@@ -1,0 +1,30 @@
+package pacman;
+
+import java.awt.Font;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class MainWindow extends JFrame{
+
+	JButton start, exit;
+	
+	
+	public MainWindow(){
+		setBounds(200, 100, 500, 350);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		start= new JButton("New Game");
+		start.setBounds(180, 110, 100, 20);
+		getContentPane().add(start);
+		JLabel label = new JLabel("PACMAN");
+		label.setFont(new Font("Chiller", Font.BOLD ,44));
+		label.setBounds(170, 10, 200, 80);
+		getContentPane().add(label);
+		
+		exit= new JButton();
+		
+		
+	}
+}
