@@ -1,0 +1,9 @@
+package pacman;
+
+public abstract class Pacman {
+
+	protected int lives=3;
+	private String [] images;
+	
+	
+}

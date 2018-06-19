@@ -1,0 +1,34 @@
+package level;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+
+public class LevelOne extends Level{
+	
+	public LevelOne(int numberOfBoard){
+		super(numberOfBoard);
+	}
+public static void main(String[] args) {
+		new LevelOne(1);
+	}
+@Override
+public void keyPressed(KeyEvent arg0) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void keyReleased(KeyEvent arg0) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void keyTyped(KeyEvent arg0) {
+	// TODO Auto-generated method stub
+	
+}
+@Override
+public void actionPerformed(ActionEvent arg0) {
+	// TODO Auto-generated method stub
+	
+}
+}

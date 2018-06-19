@@ -1,0 +1,17 @@
+package pacman;
+
+public abstract class Pacman {
+
+	protected int lives=3;
+	private String [] images;
+	
+	
+	public Pacman(){
+		images=new String [4];
+		images[1]="image/up.png";
+		images[2]="image/down.png";
+		images[3]="image/right.png";
+		images[4]="image/left.png";
+	}
+	
+}

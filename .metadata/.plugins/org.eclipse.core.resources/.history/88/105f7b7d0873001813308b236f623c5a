@@ -1,0 +1,21 @@
+package pacman;
+
+public abstract class Pacman {
+
+	protected int lives=3;
+	private String [] images;
+	
+	
+	public Pacman(String up, String down, String right, String left){
+		images=new String [4];
+		images[0]=up;
+		images[1]=down;
+		images[2]=right;
+		images[3]=left;
+	}
+	
+	public String[] getImage(){
+		return images;
+	}
+	
+}

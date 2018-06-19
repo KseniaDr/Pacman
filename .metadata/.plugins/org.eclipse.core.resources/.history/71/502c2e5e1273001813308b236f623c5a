@@ -1,0 +1,39 @@
+package pacman;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class Ypacman extends Pacman implements KeyListener,ActionListener {
+	
+	
+	public Ypacman (int numOfBoard){
+		super("image/up.png","image/down.png","image/right.png","image/left.png", numOfBoard,5);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		canMove();
+		move(arg0);
+	}
+
+}

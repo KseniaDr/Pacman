@@ -1,0 +1,68 @@
+package pacman;
+
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+
+import level.Board;
+
+public abstract class Pacman {
+
+	protected int lives=3;
+	private String [] images;
+	protected Board board;
+	int x;
+	int y;
+	private final int speed;
+
+	public Pacman(String up, String down, String right, String left, int numofBoard, int speed){
+		images=new String [4];
+		images[0]=up;
+		images[1]=down;
+		images[2]=right;
+		images[3]=left;
+		board=new Board(numofBoard);
+		this.speed=speed;
+	}
+
+	public String[] getImage(){
+		return images;
+	}
+
+	/**this function checks if the pacman can move to a certain point on the board. 
+	 * @param x- the x point
+	 * @param y- the y point
+	 * @return true if the pacman can move to this point and false of the pacman can't move there.
+	 */
+	public boolean canMove(){
+		if(board.getArray()[x][y]==1 || board.getArray()[x][y]==3)//check if i'ts a wall or a gate
+			return false;
+		return true;
+	}//close canMove
+
+	public void move(KeyEvent e){
+		if (e.getKeyCode() ==KeyEvent.VK_RIGHT ){
+			x=(x+speed);
+			setImage_Path(images[2]);
+
+		}else if (e.getKeyCode() ==KeyEvent.VK_LEFT ){
+			player.setX(player.getX()-pacspeed);
+			player.setImage_Path(images[3]);
+
+		}else if (e.getKeyCode() ==KeyEvent.VK_UP ){
+			player.setY(player.getY()-pacspeed);
+			player.setImage_Path(images[0]);
+
+		}else if (e.getKeyCode() ==KeyEvent.VK_DOWN ){
+			player.setY(player.getY()+pacspeed);
+			player.setImage_Path(images[1]);
+
+		}
+	}
+
+	public void paint(Graphics g){
+
+	}
+}
+
+
+

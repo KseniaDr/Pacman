@@ -1,0 +1,9 @@
+package pacman;
+
+public class Ypacman extends Pacman {
+	
+	public Ypacman (int numOfBoard){
+		super("image/up.png","image/down.png","image/right.png","image/left.png", numOfBoard);
+	}
+
+}

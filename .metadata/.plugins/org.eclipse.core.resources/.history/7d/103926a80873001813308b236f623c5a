@@ -1,0 +1,24 @@
+package pacman;
+
+import level.Board;
+
+public abstract class Pacman {
+
+	protected int lives=3;
+	private String [] images;
+	protected Board board;
+	
+	public Pacman(String up, String down, String right, String left, int numofBoard){
+		images=new String [4];
+		images[0]=up;
+		images[1]=down;
+		images[2]=right;
+		images[3]=left;
+		board=new Board(numofBoard);
+	}
+	
+	public String[] getImage(){
+		return images;
+	}
+	
+}

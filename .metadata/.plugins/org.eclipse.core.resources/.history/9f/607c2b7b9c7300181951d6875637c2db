@@ -1,0 +1,12 @@
+package pacman;
+
+import menus.MainWindow;
+import menus.SecondMenu;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//new MainWindow();
+		new SecondMenu();
+			}
+}
